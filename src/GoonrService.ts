@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 class GoonrService {
-    private apiURL = 'http://localhost:3000'
+    private apiURL = 'https://goonr-api.onrender.com/'
     
     public async getClasses(id: number) {
         let classes = this.getAPI('classes')
