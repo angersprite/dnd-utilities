@@ -1,27 +1,67 @@
 .goonr-container {
-    background-color:#907090;
-    padding:10px;
+    background-color:white;
+    padding: 10px;
     border-radius: .5em;
+    border: 1px solid black;
     border-bottom: 2px solid black;
 }
 
+.title-bar {
+    font-weight: bold;
+    font-size: 1.4em;
+    display: flex;
+    justify-content: center;
+}
+
+.title-icon {
+    max-height: 25px;
+}
+
 .npc-form {
-    display:flex;
-    justify-content:center;
-    margin-bottom:5px;
+    margin-bottom: 5px;
     border-bottom: 1px solid black;
     padding-bottom: 5px;
 }
 
+.npc-form-filters {
+    display: flex;
+    margin-bottom: 7px;
+}
+
+.npc-filter {
+    margin: 0 5px 5px 0;
+}
+
+.npc-filter label {
+    margin-right: 5px;
+}
+
+button {
+    width: 100%;
+}
+
 .npc-display {
-    display:flex;
+    display: flex;
     flex-direction:column;
     justify-content:flex-start;
 }
 
-.npc-field {
-    margin: 0 10px 5px 0;
+.npc-field-row {
+    display: flex;
+    margin: 8px 10px 5px 0;
     text-align: left;
+    border-bottom: 1px dashed grey;
+}
+
+.npc-field-name {
+    text-align: left;
+    width: 40%;
+}
+
+.npc-field-val {
+    text-align: right;
+    margin-left: 10px;
+    width: 60%;
 }
 
 @media (max-width: 800px) {

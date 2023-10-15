@@ -2,15 +2,15 @@ import { useState } from 'react'
 import './App.css'
 import './Goonr.css'
 import NPCBuilder from './NPCBuilder.jsx'
-import NPCDisplay from './NPCDisplay.jsx'
+import TitleBar from './TitleBar.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div class="goonr-container">
+    <div className="goonr-container">
+      <TitleBar></TitleBar>
       <NPCBuilder></NPCBuilder>
-      <NPCDisplay></NPCDisplay>
     </div>
   )
 }
