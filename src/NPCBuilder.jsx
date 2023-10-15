@@ -38,7 +38,6 @@ export default function NPCBuilder() {
         let npcAPIResponse = goonrService.getNPC(classId, raceId)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
                 setNPC(new NPC(
                     data.className,
                     data.race,
