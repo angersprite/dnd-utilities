@@ -32,8 +32,7 @@ class GoonrService {
             mode: 'cors',
             body: postBody
         })
-        //const json = await response.json();
-        //console.log(json);
+        
         return response
     }
 

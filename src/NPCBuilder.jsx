@@ -49,13 +49,13 @@ export default function NPCBuilder() {
                     data.toHit,
                     data.weapon,
                     data.weaponDamage,
-                    data.description
+                    data.descriptors
                 ))
             })
     }
 
     return (
-        <div class="npc-builder-card">
+        <div className="npc-builder-card">
             <div className="npc-form">
                 <div className="npc-form-filters">
                     <div className="npc-filter">
