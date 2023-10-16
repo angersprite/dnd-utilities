@@ -68,8 +68,8 @@ export default function NPCBuilder() {
                     </div>
 
                     <div className="npc-filter">
-                        <label htmlFor="raceSelect">Class:</label>
-                        <select id="raceSelect" onChange={(e) => setClassID(e.target.value)}>
+                        <label htmlFor="classSelect">Class:</label>
+                        <select id="classSelect" onChange={(e) => setClassID(e.target.value)}>
                             <option value="-1">Random</option>
                             {allClasses.map(c => {return (<option value={c.id} key={c.id}>{c.name}</option>)})}
                         </select>
