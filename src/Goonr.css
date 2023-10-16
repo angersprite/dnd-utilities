@@ -1,9 +1,9 @@
 .goonr-container {
     background-color:white;
-    padding: 10px;
     border-radius: .5em;
     border: 1px solid black;
     border-bottom: 2px solid black;
+    max-width: 600px;
 }
 
 .title-bar {
@@ -21,6 +21,7 @@
     margin-bottom: 5px;
     border-bottom: 1px solid black;
     padding-bottom: 5px;
+    padding: 5px;
 }
 
 .npc-form-filters {
@@ -44,6 +45,7 @@ button {
     display: flex;
     flex-direction:column;
     justify-content:flex-start;
+    padding: 5px;
 }
 
 .npc-field-row {
@@ -55,20 +57,23 @@ button {
 
 .npc-field-name {
     text-align: left;
-    width: 40%;
+    width: 20%;
+
 }
 
 .npc-field-val {
     text-align: right;
     margin-left: 10px;
-    width: 60%;
+    width: 80%;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
     .npc-form {
         flex-direction: column;
     }
     .goonr-container {
         width: 100%;
+        border: 0;
+        border-bottom: 2px solid black;
     }
 }

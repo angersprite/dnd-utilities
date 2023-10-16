@@ -1,6 +1,14 @@
 import NPC from './NPC.ts'
 
 export default function NPCDisplay(props) {
+    let skillList = <ul></ul>
+    if (props.npc.skills) {
+        skillList = (
+            <ul>
+                {props.npc.skills.map(sk => {return (<li key={sk.id}>{sk.name} {sk.description}</li>)})}
+            </ul>
+        )
+    }
     return (
         <div className="npc-display" >
             <div className="npc-field-row">
@@ -21,7 +29,7 @@ export default function NPCDisplay(props) {
             </div>
             <div className="npc-field-row">
                 <label htmlFor="armorClass" className="npc-field-name">AC</label>
-                <div className="npc-field-val" id="armorClass">{props.npc.armorClass}</div>
+                <div className="npc-field-val" id="armorClass">{props.npc.armorName} {props.npc.armorClass}</div>
             </div>
             <div className="npc-field-row">
                 <label htmlFor="toHit" className="npc-field-name">Thac0</label>
@@ -34,6 +42,11 @@ export default function NPCDisplay(props) {
             <div className="npc-field-row">
                 <label htmlFor="desc" className="npc-field-name">Description</label>
                 <div className="npc-field-val" id="desc">{props.npc.description}</div>
+            </div>
+            <div className="npc-field-row">
+                <label htmlFor="desc" className="npc-field-name">Special Skill(s)</label>
+                <div className="npc-field-val" id="desc">{skillList}
+                </div>
             </div>
         </div>
     );

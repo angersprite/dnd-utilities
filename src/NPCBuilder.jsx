@@ -44,11 +44,13 @@ export default function NPCBuilder() {
                     data.firstName, 
                     data.lastName,
                     data.hitPoints,
+                    data.armorType,
                     data.armorClass,
                     data.toHit,
                     data.weapon,
                     data.weaponDamage,
-                    data.descriptors
+                    data.descriptors,
+                    data.skills
                 ))
             })
     }
