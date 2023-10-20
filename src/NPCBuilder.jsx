@@ -2,6 +2,8 @@ import GoonrService from './GoonrService.ts'
 import { useState, useEffect } from 'react';
 import NPCDisplay from './NPCDisplay.jsx'
 import NPC from './NPC.ts'
+import './Goonr.css'
+import TitleBar from './TitleBar.jsx'
 
 const goonrService = new GoonrService
 
@@ -56,28 +58,31 @@ export default function NPCBuilder() {
     }
 
     return (
-        <div className="npc-builder-card">
-            <div className="npc-form">
-                <div className="npc-form-filters">
-                    <div className="npc-filter">
-                        <label htmlFor="raceSelect">Race:</label>
-                        <select id="raceSelect" onChange={(e) => setRaceID(e.target.value)}>
-                            <option value="-1">Random</option>
-                            {allRaces.map(c => {return (<option value={c.id} key={c.id}>{c.name}</option>)})}
-                        </select>
-                    </div>
+        <div className="goonr-container">
+            <TitleBar></TitleBar>
+            <div className="npc-builder-card">
+                <div className="npc-form">
+                    <div className="npc-form-filters">
+                        <div className="npc-filter">
+                            <label htmlFor="raceSelect">Race:</label>
+                            <select id="raceSelect" onChange={(e) => setRaceID(e.target.value)}>
+                                <option value="-1">Random</option>
+                                {allRaces.map(c => {return (<option value={c.id} key={c.id}>{c.name}</option>)})}
+                            </select>
+                        </div>
 
-                    <div className="npc-filter">
-                        <label htmlFor="classSelect">Class:</label>
-                        <select id="classSelect" onChange={(e) => setClassID(e.target.value)}>
-                            <option value="-1">Random</option>
-                            {allClasses.map(c => {return (<option value={c.id} key={c.id}>{c.name}</option>)})}
-                        </select>
+                        <div className="npc-filter">
+                            <label htmlFor="classSelect">Class:</label>
+                            <select id="classSelect" onChange={(e) => setClassID(e.target.value)}>
+                                <option value="-1">Random</option>
+                                {allClasses.map(c => {return (<option value={c.id} key={c.id}>{c.name}</option>)})}
+                            </select>
+                        </div>
                     </div>
+                    <button onClick={generateNPC}>Generate</button>
                 </div>
-                <button onClick={generateNPC}>Generate</button>
+                <NPCDisplay npc={npc}></NPCDisplay>
             </div>
-            <NPCDisplay npc={npc}></NPCDisplay>
         </div>
     );
 }

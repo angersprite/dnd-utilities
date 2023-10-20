@@ -1,17 +1,25 @@
 import { useState } from 'react'
 import './App.css'
-import './Goonr.css'
+import NavBar from './NavBar.jsx'
 import NPCBuilder from './NPCBuilder.jsx'
-import TitleBar from './TitleBar.jsx'
+import InitiativeTracker from './InitiativeTracker.jsx'
+import ExpTracker from './ExpTracker.jsx'
+import Notes from './Notes.jsx'
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="goonr-container">
-      <TitleBar></TitleBar>
-      <NPCBuilder></NPCBuilder>
-    </div>
+    <>
+      <NavBar></NavBar>
+      <div className="main-section">
+        <Routes>
+          <Route path="/NPC" element={<NPCBuilder/>} />
+          <Route path="/Init" element={<InitiativeTracker/>} />
+          <Route path="/Exp" element={<ExpTracker/>} />
+          <Route path="/Notes" element={<Notes/>} />
+        </Routes>
+      </div>
+    </>
   )
 }
 
