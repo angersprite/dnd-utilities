@@ -41,18 +41,16 @@
     font-size: 1.4em;
 }
 
-.burger-menu {
-    cursor: pointer;
-    width: 40px;
-}
-
 @media screen and (max-width: 600px) {
     .nav-link-container {
-        display: none;
+        max-height:0px;
+        display: block;
+        overflow: hidden; 
+        transition: max-height .5s;
     }
 
     .nav-link-container.open {
-        display: block;
+        max-height:400px;
         text-align: left;
         float: none;
     }
@@ -62,8 +60,17 @@
     }
 
     .burger-menu {
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
         display: flex;
         margin: 0 5px 0 auto;
+        background-color: transparent;
+        border-radius: .2em;
+        border: 1px solid white;
+        color: white;
+        font-size: 1.4em;
+        text-align: center;
     }
 }
 

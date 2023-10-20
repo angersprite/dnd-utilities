@@ -12,7 +12,7 @@ export default function NavBar() {
         <nav className="nav-bar">
             <div className="nav-container">
                 <div className="nav-title">Kate's RPG Utilities</div>
-                <button onClick={() => {toggleMenu(!isMenuOpen)}} className="material-symbols-outlined burger-menu">Menu</button>
+                <button onClick={() => {toggleMenu(!isMenuOpen)}} className="burger-menu">☰</button>
             </div>
 
             <div className="nav-link-container">
