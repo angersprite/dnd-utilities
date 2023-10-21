@@ -1,12 +1,19 @@
 import './NavBar.css'
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from "react-router-dom";
+import { Link } from "react-router-dom"
 
-let isMenuOpen = false;
+let isMenuOpen = false
+let isLoggedIn = false
+const navLinks = [
+    {id:"npcLink", label:"NPCs", route:"/NPC"},
+    {id:"initLink", label:"Initiative", route:"/Init"},
+    {id:"expLink", label:"Exp", route:"/Exp"},
+    {id:"notesLink", label:"Notes", route:"/Notes"},
+    {id:"diceLink", label:"Dice", route:"/Dice"}
+]
+const loginLink = {id:"loginLink", label:"Login", route:"/Login"}
+const profileLink = {id:"profileLink", label:"Profile", route:"/UserProfile"}
 
+// convert this to .ts to type safe the link objects?
 export default function NavBar() {
     return (
         <nav className="nav-bar">
@@ -16,12 +23,25 @@ export default function NavBar() {
             </div>
 
             <div className="nav-link-container">
-                <Link id="npcLink" className="nav-link" onClick={() => {handleClickLink('#npcLink')}} to={`/NPC`}>NPCs</Link>
-                <Link id="initLink" className="nav-link" onClick={() => {handleClickLink('#initLink')}} to={`/Init`}>Initiative</Link>
-                <Link id="expLink" className="nav-link" onClick={() => {handleClickLink('#expLink')}} to={`/Exp`}>Exp</Link>
-                <Link id="notesLink" className="nav-link" onClick={() => {handleClickLink('#notesLink')}} to={`/Notes`}>Notes</Link>
+                {
+                    navLinks.map(link => {
+                        return (renderLink(link))
+                    })
+                }
+
+                {isLoggedIn ? (
+                    renderLink(profileLink)
+                ) : (
+                    renderLink(loginLink)
+                )}
             </div>
         </nav>
+    )
+}
+
+function renderLink(linkObj) {
+    return (
+        <Link id={linkObj.id} key={linkObj.id} className="nav-link" onClick={() => {handleClickLink(linkObj.id)}} to={linkObj.route}>{linkObj.label}</Link>
     )
 }
 
@@ -40,5 +60,5 @@ function handleClickLink(linkId) {
     document.querySelectorAll('.nav-link').forEach((link) => {
         link.classList.remove('active')
     })
-    document.querySelector(linkId).classList.add('active')
+    document.querySelector(`#${linkId}`).classList.add('active')
 }

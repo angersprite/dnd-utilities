@@ -20,3 +20,53 @@
   margin: auto;
   padding: 10px 0 0 0;
 }
+
+.form-container {
+  padding: 1em;
+  border: 0;
+  width: 100%;
+}
+
+.form-container div {
+  margin-top: 10px;
+}
+
+.form-container h2 {
+  margin: 0;
+}
+
+button {
+  padding: 5px;
+  background-color: rgb(56, 37, 48);
+  color: white;
+  border-radius: .2em;
+  border: 0;
+}
+
+button.big-button {
+  padding: 1em;
+  width: 100%;
+}
+
+a {
+  color: rgb(56, 37, 48);
+  text-decoration: none;
+}
+
+.vert-label-field {
+  display: flex;
+  flex-direction:column;
+}
+
+.vert-label-field input {
+  width: auto;
+}
+
+@media screen and (min-width: 601px) {
+  .form-container {
+    border: 1px solid grey;
+    border-radius: .5em;
+    width: 80%;
+    max-width: 500px;
+  }
+}

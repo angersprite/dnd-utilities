@@ -1,5 +1,9 @@
 export default function ExpTracker() {
     return (
-        <div>Experience Tracker</div>
+        <div className="form-container">
+            <form>
+                <h2>Experience Tracker</h2>
+            </form>
+        </div>
     )
 }

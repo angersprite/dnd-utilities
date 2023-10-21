@@ -58,10 +58,10 @@ export default function NPCBuilder() {
     }
 
     return (
-        <div className="goonr-container">
-            <TitleBar></TitleBar>
-            <div className="npc-builder-card">
-                <div className="npc-form">
+        <div className="form-container">
+            <h2>NPC Generator</h2>
+            <div className="npc-form">
+                <form>
                     <div className="npc-form-filters">
                         <div className="npc-filter">
                             <label htmlFor="raceSelect">Race:</label>
@@ -79,10 +79,10 @@ export default function NPCBuilder() {
                             </select>
                         </div>
                     </div>
-                    <button onClick={generateNPC}>Generate</button>
-                </div>
-                <NPCDisplay npc={npc}></NPCDisplay>
+                    <button id="generation-button" onClick={generateNPC}>Generate</button>
+                </form>
             </div>
+            <NPCDisplay npc={npc}></NPCDisplay>
         </div>
     );
 }

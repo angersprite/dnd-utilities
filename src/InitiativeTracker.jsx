@@ -1,5 +1,9 @@
 export default function InitiativeTracker() {
     return (
-        <div>Initiative Tracker</div>
+        <div className="form-container">
+            <form>
+                <h2>Initiative Tracker</h2>
+            </form>
+        </div>
     )
 }
