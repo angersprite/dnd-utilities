@@ -6,14 +6,14 @@ export default function Login() {
             <form>
                 <div className="vert-label-field">
                     <label htmlFor="userName">Username</label>
-                    <input type="text" id="userName" name="userName"></input>
+                    <input type="text" id="userName" name="userName" required></input>
                 </div>
                 <div className="vert-label-field">
                     <label htmlFor="password">Password</label>
-                    <input type="password" id="password" name="password"></input>
+                    <input type="password" id="password" name="password" required></input>
                 </div>
                 <div>
-                    <button className="big-button">Log In</button>
+                    <button className="big-button" type="button">Log In</button>
                 </div>
 
                 <div>

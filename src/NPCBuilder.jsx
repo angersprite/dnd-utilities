@@ -79,7 +79,7 @@ export default function NPCBuilder() {
                             </select>
                         </div>
                     </div>
-                    <button id="generation-button" onClick={generateNPC}>Generate</button>
+                    <button id="generation-button" onClick={generateNPC} type="button">Generate</button>
                 </form>
             </div>
             <NPCDisplay npc={npc}></NPCDisplay>
