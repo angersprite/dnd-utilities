@@ -2,40 +2,31 @@ import './NavBar.css'
 import { Link } from "react-router-dom"
 
 let isMenuOpen = false
-let isLoggedIn = false
 const navLinks = [
     {id:"npcLink", label:"NPCs", route:"/NPC"},
     {id:"initLink", label:"Initiative", route:"/Init"},
-    {id:"expLink", label:"Exp", route:"/Exp"},
-    {id:"notesLink", label:"Notes", route:"/Notes"},
-    {id:"diceLink", label:"Dice", route:"/Dice"}
 ]
-const loginLink = {id:"loginLink", label:"Login", route:"/Login"}
-const profileLink = {id:"profileLink", label:"Profile", route:"/UserProfile"}
 
 // convert this to .ts to type safe the link objects?
-export default function NavBar() {
+export default function NavBar(props) {
+    
     return (
-        <nav className="nav-bar">
-            <div className="nav-container">
-                <div className="nav-title">Kate's RPG Utilities</div>
-                <button onClick={() => {toggleMenu(!isMenuOpen)}} className="burger-menu">☰</button>
-            </div>
+        <header>
+            <nav className="nav-bar">
+                <div className="nav-container">
+                    <div className="nav-title">Kate's RPG Utilities</div>
+                    <button onClick={() => {toggleMenu(!isMenuOpen)}} className="burger-menu">☰</button>
+                </div>
 
-            <div className="nav-link-container">
-                {
-                    navLinks.map(link => {
-                        return (renderLink(link))
-                    })
-                }
-
-                {isLoggedIn ? (
-                    renderLink(profileLink)
-                ) : (
-                    renderLink(loginLink)
-                )}
-            </div>
-        </nav>
+                <div className="nav-link-container">
+                    {
+                        navLinks.map(link => {
+                            return (renderLink(link))
+                        })
+                    }
+                </div>
+            </nav>
+        </header>
     )
 }
 

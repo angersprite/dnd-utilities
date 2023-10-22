@@ -63,6 +63,11 @@ a {
   width: auto;
 }
 
+.input-helper-text {
+  color: red;
+  margin: 0;
+}
+
 @media screen and (min-width: 601px) {
   .form-container {
     border: 1px solid grey;

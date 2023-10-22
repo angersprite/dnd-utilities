@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import NPCDisplay from './NPCDisplay.jsx'
 import NPC from './NPC.ts'
 import './Goonr.css'
-import TitleBar from './TitleBar.jsx'
+import TitleBar from '../TitleBar.jsx'
 
 const goonrService = new GoonrService
 
@@ -20,9 +20,7 @@ export default function NPCBuilder() {
           .then((data) => {
              setClasses(data);
           })
-          .catch((err) => {
-             console.log(err.message);
-          });
+          .catch((err) => {});
     }, []);
 
     useEffect(() => {
@@ -31,9 +29,7 @@ export default function NPCBuilder() {
           .then((data) => {
             setRaces(data);
           })
-          .catch((err) => {
-             console.log(err.message);
-          });
+          .catch((err) => {});
     }, []);
 
     const generateNPC = async () => {

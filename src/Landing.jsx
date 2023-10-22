@@ -1,3 +1,7 @@
-export default function Landing() {
-    return (<div>Landing Page</div>)
+export default function Landing(props) {
+    return (
+        <div className="form-container">
+            <div>Landing Page</div>
+        </div>
+    )
 }
